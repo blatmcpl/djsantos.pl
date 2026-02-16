@@ -61,13 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Efekt zmiany tła nawigacji przy skrolowaniu
+    // Efekt zmiany tła nawigacji przy skrolowaniu (tylko dla komputerów)
     const nav = document.querySelector('nav');
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
-            nav.style.background = 'rgba(0, 0, 0, 0.98)';
-        } else {
-            nav.style.background = 'rgba(0, 0, 0, 0.9)';
+        if (window.innerWidth > 850) {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
         }
     });
 });
