@@ -66,12 +66,12 @@ nav.nav-scrolled {
     justify-content: center;
     align-items: center;
     padding: 0 20px;
-    gap: 50px;
+    gap: 40px;
 }
 
 .nav-logo { 
     height: 55px; 
-    transition: transform 0.3s ease, opacity 0.3s ease; /* DODANO opacity */
+    transition: transform 0.3s ease, opacity 0.3s ease;
     display: block;
 }
 
@@ -91,7 +91,7 @@ nav.nav-scrolled {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
@@ -179,7 +179,7 @@ nav.nav-scrolled {
     text-transform: uppercase;
 }
 
-.about-section, .partners-section, .contact-section { background-color: #0a0a0a; }
+.about-section, .partners-section, .contact-section, .social-section { background-color: #0a0a0a; }
 .video-section, .shop-section { background-color: #000; }
 
 /* --- O MNIE --- */
@@ -256,6 +256,59 @@ nav.nav-scrolled {
     color: #000; 
     transform: scale(1.1); 
 }
+
+/* --- SOCIAL MEDIA --- */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.social-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 50px 30px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-card i {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-card span {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.social-card p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.social-card:hover {
+    transform: translateY(-15px);
+    background: #1a1a1a;
+    border-color: #444;
+}
+
+.social-card:hover i { transform: scale(1.2); }
+.social-card.yt:hover i { color: #FF0000; text-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+.social-card.tt:hover i { color: #ff0050; text-shadow: 0 0 20px rgba(255, 0, 80, 0.4); }
+.social-card.fb:hover i { color: #1877F2; text-shadow: 0 0 20px rgba(24, 119, 242, 0.4); }
 
 /* --- KONTAKT --- */
 .contact-box { text-align: center; background: #111; padding: 60px; border-radius: 30px; border: 1px solid #222; }
@@ -385,7 +438,6 @@ footer { text-align: center; padding: 60px; color: #444; font-size: 12px; letter
         color: #ffffff !important;
     }
     
-    .about-grid, .video-grid { flex-direction: column; display: block; }
-    .about-box { margin-bottom: 20px; }
-    .video-item { margin-bottom: 20px; }
+    .about-grid, .video-grid, .social-grid { flex-direction: column; display: block; }
+    .about-box, .video-item, .social-card { margin-bottom: 20px; }
 }
