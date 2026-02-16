@@ -44,7 +44,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(8, 8, 8, 0.8); /* Całkowicie przezroczyste na starcie */
+    background: rgba(8, 8, 8, 0.8); 
     padding: 25px 0; 
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0);
@@ -52,9 +52,8 @@ nav {
     transition: all 0.4s ease;
 }
 
-/* Klasa dodawana przez JS po skrolowaniu */
 nav.nav-scrolled {
-    background: rgba(0, 0, 0, 0.8); /* Lekko przezroczysty ciemny */
+    background: rgba(0, 0, 0, 0.8); 
     padding: 15px 0; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -72,7 +71,7 @@ nav.nav-scrolled {
 
 .nav-logo { 
     height: 55px; 
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* DODANO opacity */
     display: block;
 }
 
@@ -269,7 +268,7 @@ footer { text-align: center; padding: 60px; color: #444; font-size: 12px; letter
 /* --- MEDIA QUERIES --- */
 @media (max-width: 850px) {
     nav { 
-        background: rgba(0, 0, 0, 0.95) !important; /* Na mobile zawsze tło */
+        background: rgba(0, 0, 0, 0.95) !important; 
         padding: 15px 0 !important;
     }
 
