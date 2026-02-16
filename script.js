@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LOGIKA MENU MOBILNEGO ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navLogo = document.querySelector('.nav-logo'); // DODANO: Pobieranie logo
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
@@ -21,11 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-xmark');
 
-            // Zablokuj/odblokuj przewijanie strony, gdy otwarte jest menu na cały ekran
+            // Zablokuj/odblokuj przewijanie strony i steruj widocznością logo
             if (navLinks.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
+                if (window.innerWidth <= 850) {
+                    navLogo.style.opacity = '0'; // ZNIKANIE LOGO NA MOBILE
+                    navLogo.style.pointerEvents = 'none';
+                }
             } else {
                 document.body.style.overflow = '';
+                navLogo.style.opacity = '1'; // POWRÓT LOGO
+                navLogo.style.pointerEvents = 'all';
             }
         });
     }
@@ -47,7 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const icon = menuToggle.querySelector('i');
                     icon.classList.add('fa-bars');
                     icon.classList.remove('fa-xmark');
-                    document.body.style.overflow = ''; // Odblokuj przewijanie
+                    document.body.style.overflow = ''; 
+                    
+                    // PRZYWRÓCENIE LOGO PO KLIKNIĘCIU W LINK
+                    navLogo.style.opacity = '1';
+                    navLogo.style.pointerEvents = 'all';
                 }
 
                 const navHeight = document.querySelector('nav').offsetHeight;
