@@ -198,13 +198,14 @@ section {
 }
 
 .about-section, .partners-section, .contact-section, .social-section { background-color: #0a0a0a; }
-.video-section, .shop-section { background-color: #000; }
+.video-section, .shop-section, .group-section { background-color: #000; }
 
 .about-section::before, 
 .video-section::before, 
 .partners-section::before, 
 .shop-section::before, 
 .social-section::before, 
+.group-section::before,
 .contact-section::before {
     content: "";
     position: absolute;
@@ -235,6 +236,11 @@ section {
     mask-image: 
         radial-gradient(circle at top left, black, transparent 40%),
         radial-gradient(circle at bottom right, black, transparent 40%);
+}
+
+.group-section::before {
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 70%);
+    mask-image: radial-gradient(circle at center, black, transparent 70%);
 }
 
 .about-grid { display: flex; gap: 30px; }
@@ -385,6 +391,61 @@ section {
 .social-card.yt:hover i { color: #FF0000; text-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
 .social-card.tt:hover i { color: #ff0050; text-shadow: 0 0 20px rgba(255, 0, 80, 0.4); }
 .social-card.fb:hover i { color: #1877F2; text-shadow: 0 0 20px rgba(24, 119, 242, 0.4); }
+
+.group-box {
+    text-align: center;
+    background: linear-gradient(145deg, #111111, #050505);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 1px solid #1877F2;
+    box-shadow: 0 0 30px rgba(24, 119, 242, 0.1);
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.group-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(24, 119, 242, 0.2);
+}
+
+.group-icon {
+    font-size: 60px;
+    color: #1877F2;
+    margin-bottom: 20px;
+}
+
+.group-content h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.group-content p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #ccc;
+}
+
+.btn-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #1877F2;
+    color: #fff;
+    padding: 15px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #1877F2;
+}
+
+.btn-group:hover {
+    background: transparent;
+    color: #1877F2;
+    transform: scale(1.05);
+}
 
 .contact-box { text-align: center; background: #111; padding: 60px; border-radius: 30px; border: 1px solid #222; }
 .contact-box p { margin-bottom: 30px; font-size: 18px; color: #ccc; }
@@ -543,7 +604,7 @@ footer { text-align: center; padding: 60px; color: #444; font-size: 12px; letter
         width: 100%;
     }
 
-    .btn-more-videos, .btn-buy, .btn-email {
+    .btn-more-videos, .btn-buy, .btn-email, .btn-group {
         padding: 18px 45px;
         font-size: 16px;
         width: 100%;
