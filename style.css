@@ -71,7 +71,7 @@ nav.nav-scrolled {
 }
 
 .nav-logo { 
-    height: 85px; 
+    height: 55px; 
     transition: transform 0.3s ease;
     display: block;
 }
