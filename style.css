@@ -197,8 +197,8 @@ section {
     overflow: hidden;
 }
 
-.about-section, .partners-section, .contact-section, .social-section { background-color: #0a0a0a; }
-.video-section, .shop-section, .group-section { background-color: #000; }
+.about-section, .contact-section, .shop-section, .social-section { background-color: #0a0a0a; }
+.video-section, .partners-section, .group-section { background-color: #000; }
 
 .about-section::before, 
 .video-section::before, 
@@ -555,24 +555,6 @@ footer { text-align: center; padding: 60px; color: #444; font-size: 12px; letter
         padding: 12px 30px !important;
         border-radius: 50px;
         margin-top: 10px;
-    }
-
-    .mobile-socials {
-        display: flex;
-        flex-direction: row;
-        gap: 25px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .mobile-socials a {
-        font-size: 22px !important;
-        color: #ffffff;
-        transition: color 0.3s ease;
-    }
-
-    .mobile-socials a:hover {
-        color: #aaa;
     }
 
     .btn-live-mobile {
