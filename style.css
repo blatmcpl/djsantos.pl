@@ -316,10 +316,65 @@ section {
 .partner-item:hover { transform: translateY(-5px); border-color: #fff; background: #1a1a1a; }
 .partner-img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.shop-content { display: flex; flex-direction: column; align-items: center; background: #0a0a0a; padding: 60px; border-radius: 30px; border: 1px solid #111; text-align: center; }
-.shop-header h3 { font-size: 24px; margin-bottom: 15px; letter-spacing: 2px; }
-.shop-img { max-width: 500px; width: 100%; border-radius: 20px; margin: 30px 0; transition: transform 0.5s ease; }
+.shop-content { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    background: #0a0a0a; 
+    padding: 60px; 
+    border-radius: 30px; 
+    border: 1px solid #111; 
+    text-align: center; 
+    position: relative;
+    z-index: 3;
+}
+
+.shop-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.slider-image-container {
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.shop-img { 
+    width: 100%; 
+    display: block;
+    transition: transform 0.5s ease, opacity 0.3s ease; 
+}
+
 .shop-img:hover { transform: scale(1.03); }
+
+.slider-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.slider-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.shop-header h3 { font-size: 24px; margin-bottom: 15px; letter-spacing: 2px; }
 
 .btn-buy { 
     display: inline-flex;
@@ -594,5 +649,14 @@ footer { text-align: center; padding: 60px; color: #444; font-size: 12px; letter
         margin: 10px auto;
         display: flex;
         justify-content: center;
+    }
+
+    .shop-slider {
+        gap: 10px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
     }
 }

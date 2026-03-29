@@ -74,4 +74,54 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    const products = [
+        {
+            title: "KOLEKCJA KUBKÓW SANTOS",
+            desc: "Wysoka jakość i unikalny design. Nowy wzór już dostępny!",
+            img: "img/kubki.png",
+            link: "https://www.olx.pl/d/oferta/porcelanowy-kubek-santos-CID628-ID19rvcB.html"
+        },
+        {
+            title: "KUBEK PORCELANOWY SANTOS GRAM BO LUBIĘ",
+            desc: "Wysoka jakość i unikalny design. Nowy wzór już dostępny!",
+            img: "img/kubki2.png",
+            link: "https://www.olx.pl/d/oferta/kubek-porcelanowy-santos-z-motywem-gram-bo-lubie-CID628-ID19SCwO.html/"
+        }
+    ];
+
+    let currentProduct = 0;
+
+    const prodTitle = document.getElementById('product-title');
+    const prodDesc = document.getElementById('product-desc');
+    const prodImg = document.getElementById('shop-img');
+    const prodBtn = document.getElementById('shop-buy-btn');
+    const prevBtn = document.getElementById('prev-prod');
+    const nextBtn = document.getElementById('next-prod');
+
+    function updateProduct(index) {
+        prodImg.style.opacity = '0';
+        
+        setTimeout(() => {
+            prodTitle.textContent = products[index].title;
+            prodDesc.textContent = products[index].desc;
+            prodImg.src = products[index].img;
+            prodBtn.href = products[index].link;
+            prodImg.style.opacity = '1';
+        }, 300);
+    }
+
+    if(prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentProduct--;
+            if (currentProduct < 0) currentProduct = products.length - 1;
+            updateProduct(currentProduct);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentProduct++;
+            if (currentProduct >= products.length) currentProduct = 0;
+            updateProduct(currentProduct);
+        });
+    }
 });

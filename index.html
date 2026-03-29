@@ -145,12 +145,26 @@
             <h2 class="section-title">SKLEP</h2>
             <div class="shop-content">
                 <div class="shop-header">
-                    <h3>KOLEKCJA KUBKÓW SANTOS</h3>
-                    <p>Wysoka jakość i unikalny design. Nowy wzór już dostępny!</p>
+                    <h3 id="product-title">KOLEKCJA KUBKÓW SANTOS</h3>
+                    <p id="product-desc">Wysoka jakość i unikalny design. Nowy wzór już dostępny!</p>
                 </div>
-                <img src="img/kubki.png" alt="Nowe Kubki" class="shop-img">
+                
+                <div class="shop-slider">
+                    <button class="slider-btn prev" id="prev-prod" aria-label="Poprzedni produkt">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="slider-image-container">
+                        <img src="img/kubki.png" alt="Produkt Sklep" class="shop-img" id="shop-img">
+                    </div>
+
+                    <button class="slider-btn next" id="next-prod" aria-label="Następny produkt">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
                 <div class="shop-footer">
-                    <a href="https://www.olx.pl/d/oferta/porcelanowy-kubek-santos-CID628-ID19rvcB.html" class="btn-buy" target="_blank">PRZEJDŹ DO ZAKUPU</a>
+                    <a href="https://www.olx.pl/d/oferta/porcelanowy-kubek-santos-CID628-ID19rvcB.html" class="btn-buy" id="shop-buy-btn" target="_blank">PRZEJDŹ DO ZAKUPU</a>
                 </div>
             </div>
         </div>
