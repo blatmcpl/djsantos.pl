@@ -6,7 +6,10 @@
     <title>DJ Santos - Oficjalna Strona</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="radio.css">
     <link rel="icon" type="image/png" href="img/logoicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 </head>
 <body>
 
@@ -55,6 +58,37 @@
     </nav>
 
     <header id="hero" class="hero-section">
+        
+        <div id="hero-anchor" class="player-wrapper">
+            <div id="jr-sticky-player" class="jr-smart-player">
+                
+                <div class="jr-player-left">
+                    <button class="jr-play-btn" id="jr-play-btn" onclick="toggleStream()">
+                        <div id="jr-icon" class="jr-play-icon"></div>
+                    </button>
+                    <div class="jr-info">
+                        <div id="jr-status-label" class="jr-status">AKTUALNIE GRAMY</div>
+                        <div id="jr-metadata" class="jr-song-title">Ładowanie strumienia...</div>
+                    </div>
+                </div>
+
+                <div class="jr-player-options">
+                    <div class="jr-quality-group" id="jr-quality-group">
+                        <button class="jr-quality-btn" data-url="https://nadajnik.jumpradio.net/listen/live/jump.mp3" onclick="setQuality(this)">MP3</button>
+                        <button class="jr-quality-btn" data-url="https://nadajnik.jumpradio.net/listen/live/jump.aac" onclick="setQuality(this)">AAC+</button>
+                        <button class="jr-quality-btn" data-url="https://nadajnik.jumpradio.net/hls/live/live.m3u8" onclick="setQuality(this)">HLS</button>
+                    </div>
+                    
+                    <div class="jr-volume-container">
+                        <i class="fa-solid fa-volume-high jr-vol-icon"></i>
+                        <input type="range" id="jr-volume" class="jr-volume" min="0" max="1" step="0.05" value="0.8" oninput="changeVolume()">
+                    </div>
+                </div>
+                
+                <audio id="jump-stream" preload="none"></audio>
+            </div>
+        </div>
+
         <div class="hero-content-bottom">
             <a href="https://www.youtube.com/@santosmix/streams" target="_blank" class="btn-live-small">PRZEJDŹ DO TRANSMISJI NA ŻYWO</a>
             <p class="hero-desc-clean">Transmisje live w każdą sobotę o godzinie 21:00</p>
@@ -177,6 +211,9 @@
                 <a href="https://road3.pl" target="_blank" class="partner-item">
                     <img src="img/road3web.png" alt="ROAD3 Logo" class="partner-img">
                 </a>
+                <a href="https://jumpradio.net" target="_blank" class="partner-item">
+                    <img src="img/jumpradio.png" alt="JUMPRADIO Logo" class="partner-img">
+                </a>
             </div>
         </div>
     </section>
@@ -199,5 +236,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="radio.js"></script>
 </body>
 </html>
