@@ -1,0 +1,203 @@
+.player-wrapper {
+    text-align: center; 
+    padding: 20px; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.jr-smart-player { 
+    background: rgba(10, 10, 10, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); 
+    padding: 15px 30px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 900px; 
+    width: 100%;
+    transition: all 0.4s ease; 
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.is-sticky { 
+    position: fixed; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+    width: 95%; 
+    max-width: 1000px; 
+    background: rgba(15, 15, 15, 0.95); 
+    border: 1px solid rgba(244, 131, 22, 0.5); 
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
+}
+
+.jr-player-left {
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    flex-grow: 1;
+}
+
+.jr-info {
+    text-align: left;
+}
+
+.jr-play-btn { 
+    background: linear-gradient(135deg, #FF9A44, #F48316); 
+    border: none; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 5px 20px rgba(244, 131, 22, 0.4); 
+    flex-shrink: 0; 
+    outline: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.jr-play-btn:hover { 
+    transform: scale(1.08); 
+    box-shadow: 0 8px 25px rgba(244, 131, 22, 0.6);
+}
+
+.jr-play-icon { 
+    border-top: 12px solid transparent; 
+    border-left: 20px solid white; 
+    border-bottom: 12px solid transparent; 
+    margin-left: 5px; 
+}
+
+.jr-pause-icon { 
+    width: 14px; 
+    height: 20px; 
+    border-left: 5px solid white; 
+    border-right: 5px solid white; 
+}
+
+.jr-status {
+    color: #F48316; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+}
+
+.jr-song-title {
+    color: white; 
+    font-size: 1.1rem; 
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.jr-player-options { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.jr-quality-group {
+    display: flex;
+    gap: 5px;
+    background: rgba(0,0,0,0.6);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jr-quality-btn {
+    background: transparent;
+    color: #999;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.jr-quality-btn:hover { 
+    color: #fff; 
+}
+
+.jr-quality-btn.active {
+    background: #F48316;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(244, 131, 22, 0.3);
+}
+
+.jr-volume-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.jr-vol-icon {
+    color: #F48316;
+    font-size: 14px;
+}
+
+input[type=range].jr-volume {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    height: 6px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+input[type=range].jr-volume:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+input[type=range].jr-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #F48316;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+input[type=range].jr-volume::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+    .jr-volume-container {
+        display: none !important;
+    }
+    
+    .jr-player-options {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .jr-song-title {
+        font-size: 1rem;
+    }
+
+    .jr-smart-player {
+        padding: 15px 20px;
+    }
+}
