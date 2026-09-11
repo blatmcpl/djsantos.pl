@@ -32,7 +32,7 @@
     position: fixed; 
     left: 50%; 
     transform: translateX(-50%); 
-    z-index: 9999; 
+    z-index: 999;
     width: 95%; 
     max-width: 1000px; 
     background: rgba(15, 15, 15, 0.95); 
@@ -166,8 +166,8 @@ input[type=range].jr-volume:hover {
 }
 
 input[type=range].jr-volume::-webkit-slider-thumb {
-    -webkit-appearance: none;
     appearance: none;
+    -webkit-appearance: none;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -181,23 +181,70 @@ input[type=range].jr-volume::-webkit-slider-thumb:hover {
     transform: scale(1.2);
 }
 
-
 @media (max-width: 768px) {
-    .jr-volume-container {
-        display: none !important;
-    }
-    
-    .jr-player-options {
-        justify-content: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .jr-song-title {
-        font-size: 1rem;
+    .player-wrapper {
+        padding: 10px 5px;
+        margin-bottom: 10px;
     }
 
     .jr-smart-player {
-        padding: 15px 20px;
+        padding: 10px 14px;
+        gap: 8px;
+        border-radius: 14px;
+    }
+
+    .jr-player-left {
+        gap: 12px;
+    }
+
+    .jr-play-btn {
+        width: 42px;
+        height: 42px;
+        box-shadow: 0 3px 10px rgba(244, 131, 22, 0.4);
+    }
+
+    .jr-play-icon {
+        border-top: 8px solid transparent;
+        border-left: 14px solid white;
+        border-bottom: 8px solid transparent;
+        margin-left: 3px;
+    }
+
+    .jr-pause-icon {
+        width: 10px;
+        height: 14px;
+        border-left: 3px solid white;
+        border-right: 3px solid white;
+    }
+
+    .jr-status {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        margin-bottom: 1px;
+    }
+
+    .jr-song-title {
+        font-size: 0.85rem;
+    }
+
+    .jr-player-options {
+        justify-content: center;
+        width: 100%;
+        margin-top: 2px;
+        gap: 8px;
+    }
+
+    .jr-quality-group {
+        padding: 3px;
+    }
+
+    .jr-quality-btn {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+        border-radius: 6px;
+    }
+
+    .jr-volume-container {
+        display: none !important;
     }
 }
